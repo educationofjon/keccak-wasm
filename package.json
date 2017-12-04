@@ -1,0 +1,36 @@
+{
+  "name": "keccak-wasm",
+  "version": "1.0.0",
+  "description": "Keccak implemented in WASM",
+  "main": "index.js",
+  "dependencies": {
+    "base64-to-uint8array": "^1.0.0",
+    "brfs": "^1.4.3",
+    "nanoassert": "^1.0.0"
+  },
+  "devDependencies": {
+    "keccak": "1.4.0",
+    "browserify": "^14.4.0",
+    "tape": "^4.6.3"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "scripts": {
+    "compile": "wast2wasm keccak.wat -o keccak.wasm",
+    "demo": "browserify example.js > bundle.js",
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rojii/keccak-wasm.git"
+  },
+  "author": "Jonathan Gonzalez (@jonathangth)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rojii/keccak-wasm/issues"
+  },
+  "homepage": "https://github.com/rojii/keccak-wasm"
+}
